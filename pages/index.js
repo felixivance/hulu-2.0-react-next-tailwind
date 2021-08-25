@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Header from '../components/Header'
 import Nav from '../components/Nav'
+import Result from '../components/Result'
 
 
 export default function Home() {
@@ -16,7 +17,7 @@ export default function Home() {
       
       <Nav/>
 
-      {/* results */}
+      <Result/>
     </div>
   )
 }
