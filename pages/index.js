@@ -14,22 +14,22 @@ export default function Home(props) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header/>
-      
-      <Nav/>
+      <Header />
 
-      <Result results={props.results}/>
+      <Nav />
+
+      <Result results={props.results} />
     </div>
   )
 }
 
-export async function getServerSideProps(context){
+export async function getServerSideProps(context) {
   const genre = context.query.genre;
-  const request = await fetch (`https://api.themoviedb.org/3${requests[genre]?.url || requests.fetchTrending.url }`)
-  .then(res => res.json());
+  const request = await fetch(`https://api.themoviedb.org/3${requests[genre]?.url || requests.fetchTrending.url}`)
+    .then(res => res.json());
 
   return {
-    props:{
+    props: {
       results: request.results
     }
   }
